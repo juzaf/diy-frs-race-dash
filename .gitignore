@@ -1,0 +1,21 @@
+# Your car's sensor IDs (unique to your car - keep them out of the repo)
+sensors.json
+
+# Session logs (copy anything worth keeping into samples/, with IDs masked)
+logs/
+
+# rtl_433 binaries - download from the rtl_433 releases page instead
+*.exe
+*.dll
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
