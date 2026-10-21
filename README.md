@@ -19,11 +19,25 @@ TPMS sensors [rtl_433](https://github.com/merbanan/rtl_433) can decode.
 
 ## Hardware
 
+**Tire monitoring (works today):**
+
 | Part | Notes |
 |---|---|
 | RTL-SDR dongle | Tested with the RTL-SDR Blog V3 |
 | Antenna | Telescopic, set to ~24 cm (quarter wave at 315 MHz) |
 | Computer | Windows laptop or Linux machine |
+
+**Full in-car dash (in progress):**
+
+| Part | Role |
+|---|---|
+| LILYGO T-CAN485 (ESP32) + OBD-II splitter + OBD pigtail | Reads engine data from the CAN bus (listen-only) and sends it over Wi-Fi |
+| Raspberry Pi 3 B+ in a Flirc aluminium case | Runs rtl_433, collects engine data, logs, hosts the Wi-Fi hotspot and dashboard |
+| RTL-SDR on a short USB extension | Tire sensors, plugged into the Pi |
+| onn. 7" Android tablet (or any phone/tablet with a browser) | Displays the dashboard |
+| 4-port USB car charger + cables | Powers the ESP32, Pi and tablet |
+
+Full parts list with links and prices: [`docs/bom.md`](docs/bom.md).
 
 ## Setup (Windows)
 
@@ -103,6 +117,6 @@ Each live session writes `logs/tpms_YYYYMMDD_HHMMSS.csv`:
 - [ ] Tune warning limits for street and track pressures
 - [ ] Tread surface temperature with IR sensors
 - [ ] Engine data from OBD/CAN (RPM, speed, coolant, oil temp, throttle, brake, wheel speeds), likely through an ESP32 CAN node
-- [ ] A Pi Zero 2 W in the car that collects everything and serves the dashboard
+- [ ] A Raspberry Pi 3 B+ in the car that collects everything and serves the dashboard
 - [ ] The dashboard as a web page on a tablet or phone
 - [ ] In-car mounting and power (12 V supply, auto-start, mount)
