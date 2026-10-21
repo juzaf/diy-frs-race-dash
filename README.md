@@ -101,6 +101,8 @@ Each live session writes `logs/tpms_YYYYMMDD_HHMMSS.csv`:
 ## Roadmap
 
 - [ ] Tune warning limits for street and track pressures
-- [ ] Improve reception (antenna placement, fixed gain)
 - [ ] Tread surface temperature with IR sensors
-- [ ] Adapt for the Formula SAE car
+- [ ] Engine data from OBD/CAN (RPM, speed, coolant, oil temp, throttle, brake, wheel speeds), likely through an ESP32 CAN node
+- [ ] A Pi Zero 2 W in the car that collects everything and serves the dashboard
+- [ ] The dashboard as a web page on a tablet or phone
+- [ ] In-car mounting and power (12 V supply, auto-start, mount)
