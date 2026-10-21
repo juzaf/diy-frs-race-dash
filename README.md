@@ -33,10 +33,13 @@ TPMS sensors [rtl_433](https://github.com/merbanan/rtl_433) can decode.
 2. **rtl_433:** download the Windows x64 zip from the
    [rtl_433 releases](https://github.com/merbanan/rtl_433/releases) and extract it into
    this folder, or anywhere on your PATH.
-3. **Python:** install Python 3.13 (pygame doesn't support newer versions yet on Windows), then:
+3. **Python:** install Python 3.15 (tested), then install
+   [pygame-ce](https://pyga.me), the community edition of pygame:
    ```powershell
-   py -3.13 -m pip install -r requirements.txt
+   py -m pip install -r requirements.txt
    ```
+   Use pygame-ce rather than the original `pygame` package, which has no Windows build
+   for newer Python versions. The code doesn't change: pygame-ce still uses `import pygame`.
 4. **Sensor IDs:** copy `sensors.example.json` to `sensors.json` and fill in your IDs
    (see below).
 
@@ -56,9 +59,9 @@ TPMS sensors [rtl_433](https://github.com/merbanan/rtl_433) can decode.
 ## Usage
 
 ```powershell
-py -3.13 tpms_dash.py                    # live
-py -3.13 tpms_dash.py --demo             # fake data, no dongle needed
-py -3.13 tpms_dash.py --replay samples/2026-10-21_morning_drive.csv --speed 10
+py tpms_dash.py                    # live
+py tpms_dash.py --demo             # fake data, no dongle needed
+py tpms_dash.py --replay samples/2026-10-21_morning_drive.csv --speed 10
 ```
 
 | Key | Action |

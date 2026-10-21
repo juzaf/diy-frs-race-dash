@@ -19,7 +19,7 @@ Usage:
 Keys: F = toggle fullscreen, Esc / Q = quit
 Replay keys: Space = pause/resume, Up/Down (or +/-) = double/halve speed, Right = skip 60 s
 
-Requires: pip install pygame
+Requires: pip install pygame-ce   (community edition of pygame; still `import pygame`)
 """
 
 import argparse
